@@ -6,7 +6,13 @@
 export function getBrowserAPI() {
   let api;
   try {
-    api = global.chrome || global.browser || browser;
+    api =
+      window.chrome ||
+      window.browser ||
+      global.chrome ||
+      global.browser ||
+      chrome ||
+      browser;
   } catch (error) {
     api = browser;
   }
